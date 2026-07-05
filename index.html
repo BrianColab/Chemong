@@ -944,9 +944,9 @@
   backdrop.addEventListener('click', closeDrawer);
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer(); });
 
-  // Contact form → sends the email to john@chemong.ca via Web3Forms (no backend).
-  // Get a free access key at https://web3forms.com (enter john@chemong.ca) and paste it below.
-  const WEB3FORMS_KEY = "REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY";
+  // Contact form → delivers to john@chemong.ca via FormSubmit (no backend, no API key).
+  // FormSubmit requires a one-time "Activate Form" click (emailed to john@chemong.ca on first use).
+  const FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/john@chemong.ca";
 
   const form = document.getElementById('contactForm');
   const cfSubmit = document.getElementById('cf-submit');
@@ -972,24 +972,23 @@
     cfSubmit.textContent = 'Sending…';
 
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch(FORMSUBMIT_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          subject: `New enquiry: ${type}${org ? ' · ' + org : ''}`,
-          from_name: 'Chemong Consulting website',
-          replyto: email,
-          botcheck: form.botcheck.checked,
-          Name: name,
-          Organization: org || 'Not provided',
-          Email: email,
-          'Interested in': type,
-          Message: msg || '(no message)',
+          name: name,
+          email: email,                       // used as reply-to
+          organization: org || 'Not provided',
+          interested_in: type,
+          message: msg || '(no message)',
+          _subject: `New enquiry: ${type}${org ? ' · ' + org : ''}`,
+          _template: 'table',
+          _captcha: 'false',
+          _honey: form.botcheck.checked ? 'bot' : '',
         }),
       });
       const data = await res.json();
-      if (data.success) {
+      if (data.success === 'true' || data.success === true) {
         form.reset();
         form.hidden = true;
         formSuccess.hidden = false;
