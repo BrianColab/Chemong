@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chemong Consulting · We Connect With the People Others Can't Reach</title>
+<meta name="description" content="Chemong Consulting is an Ontario-based firm that helps organizations build trusted, meaningful connections with people who are hardest to reach, combining lived experience, peer support, and digital innovation." />
+
+<!-- Canonical / domain: update https://chemongconsulting.ca to the live domain before launch -->
+<link rel="canonical" href="https://chemongconsulting.ca/" />
+<meta name="theme-color" content="#084857" />
+
+<!-- Favicons -->
+<link rel="icon" href="images/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png" />
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+<!-- Open Graph (Facebook, LinkedIn, iMessage, etc.) -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Chemong Consulting" />
+<meta property="og:title" content="Chemong Consulting · We connect with the people others can't reach." />
+<meta property="og:description" content="Human-Centred. Digitally Enabled. Community Driven. We help organizations build trusted connections with vulnerable, marginalized, and hard-to-reach populations." />
+<meta property="og:url" content="https://chemongconsulting.ca/" />
+<meta property="og:image" content="https://chemongconsulting.ca/images/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Chemong Consulting. We connect with the people others can't reach." />
+<meta property="og:locale" content="en_CA" />
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Chemong Consulting · We connect with the people others can't reach." />
+<meta name="twitter:description" content="Human-Centred. Digitally Enabled. Community Driven. Trusted human-connection systems for organizations serving hard-to-reach populations." />
+<meta name="twitter:image" content="https://chemongconsulting.ca/images/og-image.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --deep:#084857;
+    --ink:#062b34;
+    --ink-2:#0a3a45;
+    --teal:#0f8593;
+    --cyan:#4eb1c0;
+    --mist:#93bfc1;
+    --wash:#f2f8f8;
+    --wash-2:#e6f1f1;
+    --paper:#ffffff;
+    --text:#123840;
+    --muted:#4c6b72;
+    --line:rgba(8,72,87,.12);
+    --shadow-sm:0 2px 10px -4px rgba(6,43,52,.18);
+    --shadow:0 24px 60px -28px rgba(6,43,52,.45);
+    --shadow-lg:0 40px 90px -40px rgba(6,43,52,.55);
+    --r-sm:12px; --r-md:18px; --r-lg:26px; --r-xl:34px; --r-full:999px;
+    --maxw:1180px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    color:var(--text);
+    background:var(--paper);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.01em;margin:0;color:var(--ink);}
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  section{position:relative;}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,48px);}
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--teal);
+    margin:0 0 18px;
+  }
+  .eyebrow.on-dark{color:var(--cyan);}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-weight:600;font-size:.95rem;
+    padding:15px 30px;border-radius:var(--r-full);
+    border:1px solid transparent;cursor:pointer;
+    transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s var(--ease),color .25s var(--ease);
+    white-space:nowrap;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--teal),var(--deep));color:#fff;box-shadow:0 14px 30px -12px rgba(15,133,147,.6);}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 22px 40px -14px rgba(15,133,147,.7);}
+  .btn-ghost{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.4);backdrop-filter:blur(6px);}
+  .btn-ghost:hover{background:rgba(255,255,255,.16);transform:translateY(-3px);}
+  .btn-solid-ink{background:var(--ink);color:#fff;}
+  .btn-solid-ink:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
+  .btn svg{width:17px;height:17px;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    transition:background .35s var(--ease),box-shadow .35s var(--ease),padding .35s var(--ease);
+    padding:18px 0;
+  }
+  header.scrolled{background:rgba(255,255,255,.9);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line),0 10px 30px -20px rgba(6,43,52,.35);padding:10px 0;}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .brand{display:flex;align-items:center;gap:12px;position:relative;}
+  .brand img{height:54px;width:auto;transition:height .35s var(--ease);display:block;}
+  header.scrolled .brand img{height:46px;}
+  .brand .logo-color{display:none;}
+  header.scrolled .brand .logo-white{display:none;}
+  header.scrolled .brand .logo-color{display:block;}
+  .nav-links{display:flex;align-items:center;gap:30px;}
+  .nav-links a{font-size:.9rem;font-weight:500;color:rgba(255,255,255,.9);position:relative;transition:color .2s;}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--cyan);transition:width .28s var(--ease);}
+  .nav-links a:hover::after{width:100%;}
+  header.scrolled .nav-links a{color:var(--muted);}
+  header.scrolled .nav-links a:hover{color:var(--teal);}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:8px;}
+  .menu-toggle span{display:block;width:24px;height:2px;background:#fff;margin:5px 0;border-radius:2px;transition:.3s;}
+  header.scrolled .menu-toggle span{background:var(--ink);}
+  .mobile-menu{display:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100svh;display:flex;align-items:center;
+    background:
+      linear-gradient(180deg,rgba(6,43,52,.55) 0%,rgba(8,72,87,.72) 55%,rgba(6,43,52,.92) 100%),
+      radial-gradient(120% 90% at 80% 10%,rgba(78,177,192,.35),transparent 60%),
+      url('images/hero.jpg');
+    background-size:cover;background-position:center;
+    color:#fff;overflow:hidden;
+    padding:70px 0 45px;
+  }
+  .hero-grid{position:absolute;inset:0;pointer-events:none;opacity:.5;}
+  .hero-inner{position:relative;z-index:2;max-width:860px;}
+  .hero h1{
+    color:#fff;font-size:clamp(2.7rem,6.4vw,5.1rem);font-weight:600;line-height:1.02;
+    letter-spacing:-.02em;margin:0 0 24px;
+    text-shadow:0 2px 30px rgba(0,0,0,.25);
+  }
+  .hero h1 .accent{color:var(--cyan);font-style:italic;font-weight:500;}
+  .hero-tag{
+    display:flex;flex-wrap:wrap;align-items:center;
+    font-size:clamp(.82rem,1.5vw,.98rem);font-weight:600;color:#fff;
+    margin:0 0 22px;letter-spacing:.14em;text-transform:uppercase;
+  }
+  .hero-tag span{position:relative;padding:0 clamp(16px,2vw,24px);line-height:1.3;}
+  .hero-tag span:first-child{padding-left:0;}
+  .hero-tag span:not(:first-child)::before{
+    content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
+    width:1px;height:14px;background:rgba(147,191,193,.55);
+  }
+  @media (max-width:620px){
+    .hero-tag span{padding:0;margin-right:20px;}
+    .hero-tag span:not(:first-child)::before{display:none;}
+  }
+  .hero-lead{font-size:clamp(1.05rem,1.6vw,1.22rem);color:rgba(255,255,255,.86);max-width:620px;margin:0 0 38px;line-height:1.6;}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:16px;}
+  /* ---------- TRUST STRIP ---------- */
+  .trust{position:relative;background:linear-gradient(180deg,#000 0%,#05171d 100%);
+    color:rgba(255,255,255,.85);padding:22px 0 24px;}
+  .trust-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 30px;}
+  .trust-label{
+    display:inline-flex;align-items:center;gap:11px;flex:0 0 auto;white-space:nowrap;
+    font-size:.98rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#fff;
+  }
+  .trust-label .shield{width:22px;height:22px;color:var(--cyan);flex:0 0 auto;}
+  .trust-divider{width:1px;height:30px;
+    background:linear-gradient(180deg,transparent,rgba(78,177,192,.6),transparent);flex:0 0 auto;}
+  .trust-items{display:flex;flex-wrap:wrap;gap:8px 0;justify-content:center;}
+  .trust-items span{font-size:.96rem;font-weight:500;color:rgba(255,255,255,.88);position:relative;padding:0 clamp(14px,1.6vw,22px);}
+  .trust-items span:not(:first-child)::before{content:"";position:absolute;left:0;top:50%;
+    transform:translateY(-50%);width:1px;height:13px;background:rgba(147,191,193,.35);}
+
+  /* ---------- SECTION SHELLS ---------- */
+  .section{padding:clamp(35px,4.5vw,60px) 0;}
+  .section.wash{background:var(--wash);}
+  .section-head{max-width:720px;margin:0 0 28px;}
+  .section-head.centered{text-align:left;}
+  .section-head h2{font-size:clamp(1.9rem,4vw,3rem);margin-bottom:18px;}
+  .section-head p{font-size:1.08rem;color:var(--muted);}
+  .lead-hi{color:var(--teal);font-weight:600;}
+
+  /* ---------- SPLIT (intro) ---------- */
+  .split{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(32px,5vw,72px);align-items:center;}
+  .split.reverse .media{order:2;}
+  .media{position:relative;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);}
+  .media img{width:100%;height:100%;object-fit:cover;aspect-ratio:5/4;transition:transform .9s var(--ease);}
+  .media:hover img{transform:scale(1.05);}
+  .media .frame-tint{position:absolute;inset:0;background:linear-gradient(160deg,rgba(15,133,147,.08),rgba(6,43,52,.28));mix-blend-mode:multiply;}
+  .split .copy h2{font-size:clamp(1.8rem,3.6vw,2.7rem);margin-bottom:22px;}
+  .split .copy p{color:var(--muted);font-size:1.06rem;margin-bottom:18px;}
+  .split .copy p:last-child{margin-bottom:0;}
+
+  /* ---------- EXPERTISE GRID ---------- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{
+    --ic:var(--teal);
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);
+    padding:30px 28px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);
+    position:relative;overflow:hidden;
+  }
+  .card::before{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:linear-gradient(90deg,var(--ic),transparent);transition:width .4s var(--ease);}
+  .card:hover{transform:translateY(-6px);box-shadow:0 26px 60px -30px color-mix(in srgb,var(--ic) 55%,rgba(6,43,52,.5));border-color:color-mix(in srgb,var(--ic) 30%,transparent);}
+  .card:hover::before{width:100%;}
+  .card .ico{
+    width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+    background:color-mix(in srgb,var(--ic) 12%,#fff);border:1px solid color-mix(in srgb,var(--ic) 24%,transparent);
+    margin-bottom:18px;color:var(--ic);
+    transition:background .35s var(--ease),color .35s var(--ease),transform .35s var(--ease);
+  }
+  .card:hover .ico{background:linear-gradient(150deg,var(--ic),color-mix(in srgb,var(--ic) 55%,#000));color:#fff;border-color:transparent;transform:scale(1.06) rotate(-3deg);}
+  .card .ico svg{width:26px;height:26px;}
+  /* individual icon colors per card */
+  .cards .card:nth-child(1){--ic:#0f8593;}
+  .cards .card:nth-child(2){--ic:#d1603d;}
+  .cards .card:nth-child(3){--ic:#2f74b5;}
+  .cards .card:nth-child(4){--ic:#2f9e6a;}
+  .cards .card:nth-child(5){--ic:#7b5ea7;}
+  .cards .card:nth-child(6){--ic:#159bb2;}
+  .cards .card:nth-child(7){--ic:#dd9330;}
+  .cards .card:nth-child(8){--ic:#c14b78;}
+  .cards .card:nth-child(9){--ic:#4f63c4;}
+  .card h3{font-size:1.16rem;margin-bottom:8px;}
+  .card p{font-size:.94rem;color:var(--muted);line-height:1.55;}
+
+  /* ---------- PEER SUPPORT CHAIN ---------- */
+  .chain{display:flex;align-items:stretch;gap:6px;margin-top:56px;}
+  .chain-link{flex:0 0 auto;display:flex;align-items:center;justify-content:center;
+    align-self:center;color:var(--cyan);opacity:.75;padding:0 4px;}
+  .chain-link svg{width:30px;height:30px;}
+  .chain-step{
+    flex:1;position:relative;overflow:hidden;isolation:isolate;border-radius:var(--r-lg);
+    padding:32px 30px 34px;
+    background:linear-gradient(158deg,
+      color-mix(in srgb,var(--accent) 26%,rgba(9,52,63,.7)),
+      color-mix(in srgb,var(--accent) 7%,rgba(6,43,52,.82)));
+    border:1px solid color-mix(in srgb,var(--accent) 40%,transparent);
+    box-shadow:0 22px 50px -26px rgba(0,0,0,.75),
+               inset 0 1px 0 color-mix(in srgb,var(--accent) 30%,transparent);
+    transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s var(--ease);
+  }
+  .chain-step::before{content:"";position:absolute;left:0;top:0;height:100%;width:5px;
+    background:linear-gradient(180deg,var(--accent),transparent 80%);z-index:2;}
+  .chain-step::after{content:"";position:absolute;right:-30%;top:-45%;width:75%;height:90%;
+    border-radius:50%;background:radial-gradient(circle,var(--accent),transparent 68%);
+    opacity:.28;filter:blur(24px);transition:opacity .4s var(--ease);z-index:0;}
+  .chain-step:hover{transform:translateY(-10px);
+    border-color:color-mix(in srgb,var(--accent) 75%,transparent);
+    box-shadow:0 40px 80px -30px rgba(0,0,0,.85),
+               0 0 0 1px color-mix(in srgb,var(--accent) 30%,transparent);}
+  .chain-step:hover::after{opacity:.5;}
+  .chain-step .bg-n{
+    position:absolute;top:6px;right:22px;z-index:1;pointer-events:none;user-select:none;
+    font-family:'Inter',ui-sans-serif,sans-serif;font-weight:800;font-size:7rem;line-height:1;
+    color:var(--accent);opacity:.14;letter-spacing:-.04em;
+  }
+  .chain-step .chain-content{position:relative;z-index:2;margin-top:44px;}
+  .chain-step .kicker{display:inline-flex;align-items:center;gap:8px;font-size:.7rem;font-weight:700;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
+  .chain-step h4{margin:0 0 8px;font-size:1.5rem;color:#fff;font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em;}
+  .chain-step p{font-size:1.05rem;color:rgba(255,255,255,.78);margin:0;}
+  .chain-step p b{color:#fff;font-weight:700;}
+
+  .dark-band{background:linear-gradient(160deg,var(--deep),var(--ink) 75%);color:#fff;overflow:hidden;position:relative;}
+  .dark-band .section-head h2{color:#fff;}
+  .dark-band .split .copy h2{color:#fff;}
+  .dark-band .split .copy p{color:rgba(255,255,255,.8);}
+  .glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.4;pointer-events:none;}
+  .glow.g1{width:420px;height:420px;background:var(--teal);top:-140px;right:-120px;}
+  .glow.g2{width:360px;height:360px;background:var(--cyan);bottom:-160px;left:-120px;opacity:.25;}
+
+  /* ---------- TECH QUESTION ---------- */
+  .quote-block{
+    max-width:940px;margin:0;text-align:left;
+  }
+  .quote-block .big-q{
+    font-family:'Fraunces',serif;font-weight:500;font-style:italic;
+    font-size:clamp(1.7rem,4.2vw,3rem);line-height:1.18;color:var(--ink);letter-spacing:-.01em;
+  }
+  .dark-band .quote-block .big-q{color:#fff;}
+  .quote-block .attrib{margin-top:22px;color:var(--muted);font-size:1rem;}
+  .dark-band .quote-block .attrib{color:rgba(255,255,255,.7);}
+  .value-strip{display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .value-item{position:relative;padding:26px 26px 24px;border-left:1px solid var(--line);
+    transition:background .3s var(--ease);overflow:hidden;}
+  .value-item:first-child{border-left:0;}
+  .value-item::before{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;
+    background:var(--vc);transition:width .4s var(--ease);}
+  .value-item::after{content:"";position:absolute;right:-30px;top:-30px;width:80px;height:80px;border-radius:50%;
+    background:radial-gradient(circle,var(--vc),transparent 70%);opacity:0;transition:opacity .4s var(--ease);}
+  .value-item:hover{background:color-mix(in srgb,var(--vc) 7%,transparent);}
+  .value-item:hover::before{width:100%;}
+  .value-item:hover::after{opacity:.18;}
+  .vnum{display:flex;align-items:center;gap:9px;font-family:'Fraunces',serif;font-weight:700;
+    font-size:1.45rem;color:var(--vc);margin-bottom:12px;line-height:1;position:relative;}
+  .vnum span{width:8px;height:8px;border-radius:2px;background:var(--vc);transform:rotate(45deg);}
+  .vlabel{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.32;position:relative;}
+
+  /* ---------- DATA / COMMUNITY PULL ---------- */
+  .pull{position:relative;}
+  .pull .mark{
+    position:absolute;top:-30px;left:-8px;font-family:'Fraunces',serif;font-size:7rem;line-height:1;
+    color:var(--cyan);opacity:.25;pointer-events:none;
+  }
+  .pull blockquote{margin:0;font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.5rem,3.4vw,2.3rem);line-height:1.22;color:var(--ink);letter-spacing:-.01em;}
+  .pull blockquote .em{color:var(--teal);}
+
+  /* ---------- PHILOSOPHY / MANIFESTO ---------- */
+  /* two-column editorial list */
+  .creed-grid{display:grid;grid-template-columns:minmax(0,0.82fr) minmax(0,1.18fr);gap:clamp(36px,6vw,90px);align-items:start;}
+  .creed-aside{position:sticky;top:120px;}
+  .creed-aside h2{font-size:clamp(1.9rem,3.6vw,2.8rem);margin-bottom:16px;}
+  .creed-intro{font-size:1.06rem;color:var(--muted);max-width:360px;}
+  .creed{list-style:none;margin:0;padding:0;border-top:1px solid var(--line);}
+  .creed-item{
+    display:flex;gap:clamp(18px,2.4vw,32px);align-items:baseline;
+    padding:clamp(20px,2.4vw,28px) 0;border-bottom:1px solid var(--line);
+  }
+  .creed-num{
+    flex:0 0 auto;width:26px;font-family:'Inter',sans-serif;font-weight:600;
+    font-size:.8rem;letter-spacing:.06em;color:var(--teal);
+    font-variant-numeric:tabular-nums;
+  }
+  .creed-text{
+    margin:0;font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(1.18rem,1.9vw,1.55rem);line-height:1.32;color:var(--ink);letter-spacing:-.01em;
+  }
+  .creed-text b{font-weight:600;color:var(--teal);}
+
+  /* ---------- CLOSING CTA ---------- */
+  .cta{
+    background:
+      linear-gradient(100deg,rgba(6,43,52,.92) 0%,rgba(7,55,66,.78) 38%,rgba(8,72,87,.42) 68%,rgba(8,72,87,.28) 100%),
+      url('images/peer.jpg');
+    background-size:cover;background-position:center right;color:#fff;
+    padding:clamp(36px,5vw,64px) 0;position:relative;overflow:hidden;
+  }
+  .cta h2{color:#fff;font-size:clamp(2rem,4.4vw,3.2rem);}
+  .cta .lead{color:rgba(255,255,255,.85);font-size:1.14rem;}
+  .cta-actions{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;}
+  .cta .btn-ghost{border-color:rgba(255,255,255,.5);}
+
+  /* ---------- SLIDE-OUT CONTACT FORM ---------- */
+  .form-backdrop{
+    position:fixed;inset:0;z-index:200;background:rgba(6,43,52,.55);
+    backdrop-filter:blur(4px);opacity:0;transition:opacity .35s var(--ease);
+  }
+  .form-backdrop.open{opacity:1;}
+  .form-drawer{
+    position:fixed;top:0;right:0;bottom:0;z-index:201;
+    width:min(460px,94vw);
+    background:linear-gradient(165deg,var(--deep),var(--ink) 70%);
+    box-shadow:-30px 0 80px -30px rgba(0,0,0,.6);
+    transform:translateX(100%);transition:transform .45s var(--ease);
+    display:flex;flex-direction:column;overflow-y:auto;
+  }
+  .form-drawer.open{transform:none;}
+  .drawer-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:26px 30px 18px;border-bottom:1px solid rgba(255,255,255,.12);position:sticky;top:0;
+    background:linear-gradient(165deg,var(--deep),rgba(8,72,87,.96));z-index:2;
+  }
+  .drawer-logo{height:52px;width:auto;display:block;}
+  .drawer-close{
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;
+    width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;
+    transition:background .2s,transform .2s;flex:0 0 auto;
+  }
+  .drawer-close:hover{background:rgba(255,255,255,.18);transform:rotate(90deg);}
+  .drawer-close svg{width:20px;height:20px;}
+  .drawer-body{padding:28px 30px 40px;}
+  .drawer-body h3{color:#fff;font-size:1.55rem;margin-bottom:6px;}
+  .drawer-sub{color:rgba(255,255,255,.65);font-size:.94rem;margin-bottom:24px;}
+
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--mist);margin-bottom:7px;}
+  .field input,.field textarea,.field select{
+    width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);
+    border-radius:var(--r-sm);padding:13px 15px;color:#fff;font-family:inherit;font-size:.96rem;
+    transition:border-color .2s,box-shadow .2s,background .2s;
+  }
+  .field textarea{resize:vertical;min-height:120px;}
+  .field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.4);}
+  .field input:focus,.field textarea:focus,.field select:focus{
+    outline:none;border-color:var(--cyan);background:rgba(255,255,255,.1);box-shadow:0 0 0 3px rgba(78,177,192,.18);
+  }
+  .field select option{background:#0a3a45;color:#fff;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  #contactForm .btn-primary{width:100%;justify-content:center;margin-top:6px;}
+  .form-note{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:14px;text-align:center;}
+  body.drawer-open{overflow:hidden;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:rgba(255,255,255,.7);padding:32px 0 17px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:44px;}
+  .foot-brand .logo-line{display:flex;align-items:center;margin-bottom:18px;}
+  .foot-logo{height:52px;width:auto;display:block;}
+  .foot-brand p{font-size:.95rem;max-width:340px;line-height:1.6;}
+  footer h5{color:#fff;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;margin:0 0 18px;font-weight:600;}
+  footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;}
+  footer ul a{font-size:.94rem;transition:color .2s;}
+  footer ul a:hover{color:var(--cyan);}
+  .foot-btn{
+    display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.22);color:#fff;
+    font-family:inherit;font-weight:600;font-size:.9rem;padding:11px 20px;border-radius:var(--r-full);
+    margin-bottom:18px;transition:background .25s var(--ease),border-color .25s var(--ease),transform .25s var(--ease);
+  }
+  .foot-btn:hover{background:rgba(78,177,192,.16);border-color:var(--cyan);transform:translateY(-2px);}
+  .foot-btn svg{width:16px;height:16px;}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.85rem;color:rgba(255,255,255,.55);}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+  .reveal.in{opacity:1;transform:none;}
+  .reveal.d1{transition-delay:.08s;} .reveal.d2{transition-delay:.16s;} .reveal.d3{transition-delay:.24s;}
+  .reveal.d4{transition-delay:.32s;} .reveal.d5{transition-delay:.4s;} .reveal.d6{transition-delay:.48s;}
+
+  /* ---------- MOBILE ---------- */
+  @media (max-width:920px){
+    .cards{grid-template-columns:repeat(2,1fr);}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    .foot-brand{grid-column:1/-1;}
+    .value-strip{grid-template-columns:1fr 1fr;}
+    .value-item:nth-child(odd){border-left:0;}
+    .value-item:nth-child(n+3){border-top:1px solid var(--line);}
+  }
+  @media (max-width:760px){
+    .nav-links,.nav-cta .btn{display:none;}
+    .menu-toggle{display:block;}
+    .mobile-menu{
+      display:flex;
+      position:fixed;inset:0 0 0 auto;width:min(84vw,340px);z-index:99;
+      background:var(--paper);box-shadow:var(--shadow-lg);
+      transform:translateX(100%);transition:transform .4s var(--ease);
+      display:flex;flex-direction:column;gap:6px;padding:100px 28px 40px;
+    }
+    .mobile-menu.open{transform:none;}
+    .mobile-menu a{padding:14px 4px;font-size:1.05rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--line);}
+    .mobile-menu .btn{margin-top:20px;justify-content:center;}
+    .split{grid-template-columns:1fr;}
+    .split.reverse .media{order:0;}
+    .creed-grid{grid-template-columns:1fr;gap:24px;}
+    .creed-aside{position:static;}
+    .chain{flex-direction:column;gap:10px;margin-top:36px;}
+    .chain-link{transform:rotate(90deg);padding:2px 0;}
+    .trust-inner{flex-direction:column;}
+    .value-strip{grid-template-columns:1fr;}
+    .value-item{border-left:0;border-top:1px solid var(--line);}
+    .value-item:first-child{border-top:0;}
+  }
+  @media (max-width:480px){
+    .cards{grid-template-columns:1fr;}
+    .hero-actions .btn{flex:1;justify-content:center;}
+    .hero h1{font-size:2.3rem;}
+    .hero .eyebrow{font-size:.62rem;letter-spacing:.16em;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;transition:none;}
+    .media:hover img{transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Chemong Consulting home">
+      <img class="logo-white" src="images/logo-white.png" alt="Chemong Consulting" />
+      <img class="logo-color" src="images/logo-color.png" alt="Chemong Consulting" />
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#approach">Approach</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#peer">Peer Support</a>
+      <a href="#communities">Communities</a>
+      <a href="#philosophy">Philosophy</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="#contact" data-open-form>Start a conversation</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+  <a href="#approach">Approach</a>
+  <a href="#expertise">Expertise</a>
+  <a href="#peer">Peer Support</a>
+  <a href="#communities">Communities</a>
+  <a href="#philosophy">Philosophy</a>
+  <a class="btn btn-primary" href="#contact">Start a conversation</a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <svg class="hero-grid" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 800" aria-hidden="true">
+    <g fill="none" stroke="rgba(147,191,193,.35)" stroke-width="1">
+      <path d="M-100,560 C300,300 620,760 980,420 S1500,260 1600,520"/>
+      <path d="M-100,620 C320,360 640,820 1000,480 S1520,320 1600,580" stroke="rgba(78,177,192,.3)"/>
+    </g>
+    <g fill="rgba(78,177,192,.7)">
+      <circle cx="980" cy="420" r="5"/><circle cx="620" cy="618" r="4"/><circle cx="1290" cy="360" r="4"/>
+    </g>
+  </svg>
+  <div class="wrap hero-inner">
+    <p class="eyebrow on-dark reveal">Chemong Consulting · Ontario, Canada</p>
+    <h1 class="reveal d1">We connect with the people <span class="accent">others can't reach.</span></h1>
+    <div class="hero-tag reveal d2">
+      <span>Human-Centred</span>
+      <span>Digitally Enabled</span>
+      <span>Community Driven</span>
+    </div>
+    <p class="hero-lead reveal d3">We help organizations build trusted, meaningful connections with people who are often the hardest to reach. We design peer-driven engagement, digital service models, and community support systems that people actually use.</p>
+    <div class="hero-actions reveal d4">
+      <a class="btn btn-primary" href="#contact" data-open-form>Start a conversation
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="#approach">See how we work</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<div class="trust">
+  <div class="wrap trust-inner">
+    <span class="trust-label">
+      <svg class="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Trusted&nbsp;Partners
+    </span>
+    <div class="trust-divider" aria-hidden="true"></div>
+    <div class="trust-items">
+      <span>Governments</span>
+      <span>Indigenous Communities</span>
+      <span>Healthcare</span>
+      <span>Nonprofits</span>
+      <span>Private Sector</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ APPROACH / INTRO ============ -->
+<section class="section" id="approach">
+  <div class="wrap split">
+    <div class="media reveal">
+      <img src="images/connection.jpg" alt="A small group of people in warm conversation around a table" />
+      <div class="frame-tint"></div>
+    </div>
+    <div class="copy reveal d2">
+      <p class="eyebrow">We meet people where they are</p>
+      <h2>Meaningful engagement starts with trust, not paperwork.</h2>
+      <p>People who are angry, frightened, hesitant, or have lost trust in institutions rarely respond to traditional approaches. That's why everything we build is designed around <span class="lead-hi">human connection.</span></p>
+      <p>Whether someone is struggling with mental health, addiction, trauma, homelessness, or social isolation, we help governments, Indigenous communities, healthcare organizations, nonprofits, and private-sector partners design services that remove barriers, build trust, and create pathways to support.</p>
+      <p>Our solutions combine technology with lived experience, ensuring digital tools never replace human relationships. They strengthen them.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERTISE ============ -->
+<section class="section wash" id="expertise">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Our expertise</p>
+      <h2>We design programs that create meaningful engagement <em>before</em> crisis occurs.</h2>
+      <p>From strategy to platform, our work spans the full arc of trusted, community-owned service design.</p>
+    </div>
+    <div class="cards">
+      <!-- 1 -->
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.2"/><path d="M15.5 6.2a3 3 0 010 5.6M3.5 19a5.5 5.5 0 0111 0M15 14.5a5.5 5.5 0 015 4.5" stroke-linecap="round"/></svg></div>
+        <h3>Peer Support Program Design</h3>
+        <p>Sustainable peer-driven networks that turn lived experience into meaningful employment and better outcomes.</p>
+      </div>
+      <!-- 2 -->
+      <div class="card reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21c5-3.5 8-7 8-11a5 5 0 00-8-3 5 5 0 00-8 3c0 4 3 7.5 8 11z" stroke-linejoin="round"/><path d="M12 8v3M10.5 9.5h3" stroke-linecap="round"/></svg></div>
+        <h3>Indigenous-Led Digital Health</h3>
+        <p>Culturally grounded digital health solutions built in genuine partnership with Indigenous Nations.</p>
+      </div>
+      <!-- 3 -->
+      <div class="card reveal d2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 01-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1121 11.5z" stroke-linejoin="round"/></svg></div>
+        <h3>Community Engagement Strategy</h3>
+        <p>Engagement models that reach marginalized, vulnerable, and underserved populations on their terms.</p>
+      </div>
+      <!-- 4 -->
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h3l2-6 4 12 2-6h4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="12" r="1.4"/></svg></div>
+        <h3>Behavioural Health Platforms</h3>
+        <p>Wellness and behavioural health platforms designed for real people in real moments of need.</p>
+      </div>
+      <!-- 5 -->
+      <div class="card reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3a9 9 0 100 18 9 9 0 000-18z"/><path d="M8 15a4 4 0 018 0" stroke-linecap="round"/><circle cx="12" cy="10" r="0"/><path d="M9 10h.01M15 10h.01" stroke-linecap="round"/></svg></div>
+        <h3>Anonymous Support Services</h3>
+        <p>Safe, anonymous access that lowers the barrier to that critical first ask for help.</p>
+      </div>
+      <!-- 6 -->
+      <div class="card reveal d2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4" stroke-linecap="round"/><path d="M7 12l3-3 2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Digital Service Transformation</h3>
+        <p>Modernizing services so they remove barriers instead of creating new ones.</p>
+      </div>
+      <!-- 7 -->
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V8M10 20V4M16 20v-7M22 20H2" stroke-linecap="round"/></svg></div>
+        <h3>Community Data &amp; Outcomes</h3>
+        <p>Measurement that proves impact, with data that always belongs to the community.</p>
+      </div>
+      <!-- 8 -->
+      <div class="card reveal d1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.5 5 5.5.8-4 3.9 1 5.5L12 15.8 7 18.2l1-5.5-4-3.9L9.5 8z" stroke-linejoin="round"/></svg></div>
+        <h3>Lived-Experience Employment</h3>
+        <p>Workforce development that creates meaningful jobs for the people best placed to help.</p>
+      </div>
+      <!-- 9 -->
+      <div class="card reveal d2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.3-9-9a4.5 4.5 0 018-3 4.5 4.5 0 018 3c-.6 1.4-1.6 2.8-2.8 4" stroke-linejoin="round"/><path d="M14 15h5M16.5 12.5v5" stroke-linecap="round"/></svg></div>
+        <h3>Service Design for Vulnerable Populations</h3>
+        <p>Human-centred design for people the system too often leaves behind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PEER SUPPORT (dark) ============ -->
+<section class="section dark-band" id="peer">
+  <span class="glow g1"></span><span class="glow g2"></span>
+  <div class="wrap split reverse" style="position:relative;z-index:2;">
+    <div class="media reveal">
+      <img src="images/peer.jpg" alt="A circle of hands joined together in support" />
+      <div class="frame-tint"></div>
+    </div>
+    <div class="copy reveal d2">
+      <p class="eyebrow on-dark">Why peer support?</p>
+      <h2>The people best equipped to help are often those who have walked a similar path.</h2>
+      <p>We help organizations build sustainable peer-driven networks that provide meaningful employment, strengthen communities, and improve outcomes, while reducing pressure on already stretched health and social service systems.</p>
+    </div>
+  </div>
+  <div class="wrap" style="position:relative;z-index:2;">
+    <div class="chain">
+      <div class="chain-step reveal" style="--accent:#4ec2d4;">
+        <span class="bg-n" aria-hidden="true">1</span>
+        <div class="chain-content">
+          <span class="kicker">Step One</span>
+          <h4>Peer support</h4>
+          <p>creates <b>trust.</b></p>
+        </div>
+      </div>
+      <div class="chain-link reveal d1" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="chain-step reveal d1" style="--accent:#31b6a2;">
+        <span class="bg-n" aria-hidden="true">2</span>
+        <div class="chain-content">
+          <span class="kicker">Step Two</span>
+          <h4>Trust</h4>
+          <p>creates <b>conversations.</b></p>
+        </div>
+      </div>
+      <div class="chain-link reveal d2" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="chain-step reveal d2" style="--accent:#7fd0c4;">
+        <span class="bg-n" aria-hidden="true">3</span>
+        <div class="chain-content">
+          <span class="kicker">Step Three</span>
+          <h4>Conversations</h4>
+          <p>create <b>healing.</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECHNOLOGY WITH PURPOSE ============ -->
+<section class="section" id="technology">
+  <div class="wrap">
+    <div class="section-head centered reveal">
+      <p class="eyebrow centered">Technology with purpose</p>
+    </div>
+    <div class="quote-block reveal d1">
+      <p class="big-q">Technology should never replace people. It should help people find one&nbsp;another.</p>
+      <p class="attrib">Every platform we help design begins with one question: <strong style="color:var(--teal)">“How do we make it easier for someone to ask for help?”</strong></p>
+    </div>
+    <div class="value-strip reveal d2">
+      <div class="value-item" style="--vc:#0f8593;">
+        <span class="vnum"><span></span>01</span>
+        <span class="vlabel">Anonymous access</span>
+      </div>
+      <div class="value-item" style="--vc:#2f74b5;">
+        <span class="vnum"><span></span>02</span>
+        <span class="vlabel">Culturally appropriate support</span>
+      </div>
+      <div class="value-item" style="--vc:#2f9e6a;">
+        <span class="vnum"><span></span>03</span>
+        <span class="vlabel">Community-owned data</span>
+      </div>
+      <div class="value-item" style="--vc:#dd9330;">
+        <span class="vnum"><span></span>04</span>
+        <span class="vlabel">Measurable outcomes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMMUNITIES ============ -->
+<section class="section wash" id="communities">
+  <div class="wrap split">
+    <div class="media reveal">
+      <img src="images/community.jpg" alt="A diverse group of people together outdoors, smiling" />
+      <div class="frame-tint"></div>
+    </div>
+    <div class="copy reveal d2">
+      <p class="eyebrow">Designed for communities</p>
+      <h2>Built with local priorities and local knowledge.</h2>
+      <p>We collaborate closely with Indigenous Nations, healthcare providers, governments, and community organizations to build solutions that reflect the people they serve.</p>
+      <div class="pull" style="margin-top:30px;">
+        <span class="mark" aria-hidden="true">“</span>
+        <blockquote>When community data is collected, it belongs to the community. <span class="em">Period.</span></blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHILOSOPHY ============ -->
+<section class="section" id="philosophy">
+  <div class="wrap creed-grid">
+    <div class="creed-aside reveal">
+      <p class="eyebrow">Our philosophy</p>
+      <h2>What we believe</h2>
+      <p class="creed-intro">Five convictions that shape every engagement, platform, and partnership we take on.</p>
+    </div>
+    <ol class="creed reveal d1">
+      <li class="creed-item">
+        <span class="creed-num">01</span>
+        <p class="creed-text">Every person deserves <b>to be heard.</b></p>
+      </li>
+      <li class="creed-item">
+        <span class="creed-num">02</span>
+        <p class="creed-text">Trust must be <b>earned, not expected.</b></p>
+      </li>
+      <li class="creed-item">
+        <span class="creed-num">03</span>
+        <p class="creed-text">Lived experience <b>is expertise.</b></p>
+      </li>
+      <li class="creed-item">
+        <span class="creed-num">04</span>
+        <p class="creed-text">Technology should <b>strengthen human connection,</b> never replace it.</p>
+      </li>
+      <li class="creed-item">
+        <span class="creed-num">05</span>
+        <p class="creed-text">Communities already hold the wisdom they need. <b>Our role is to help unlock it.</b></p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ CLOSING CTA ============ -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <p class="eyebrow on-dark reveal">Helping those who help others</p>
+    <h2 class="reveal d1" style="max-width:820px;margin:0 0 20px;">Lasting change begins with a conversation.</h2>
+    <p class="lead reveal d2" style="max-width:600px;margin:0 0 36px;">Chemong Consulting exists to design the systems, strategies, and technologies that make trusted human connection possible. Let's build something your community will actually use.</p>
+    <div class="cta-actions reveal d3" style="justify-content:flex-start;">
+      <button class="btn btn-primary" data-open-form>Start a conversation
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SLIDE-OUT CONTACT FORM ============ -->
+<div class="form-backdrop" id="formBackdrop" hidden></div>
+<aside class="form-drawer" id="formDrawer" aria-hidden="true" aria-label="Contact form" role="dialog" aria-modal="true">
+  <div class="drawer-head">
+    <img src="images/logo-white.png" alt="Chemong Consulting" class="drawer-logo" />
+    <button class="drawer-close" id="drawerClose" aria-label="Close form">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="drawer-body">
+    <h3>Start a conversation</h3>
+    <p class="drawer-sub">Tell us who you're trying to reach and we'll take it from there.</p>
+    <form id="contactForm">
+      <div class="form-row">
+        <div class="field">
+          <label for="cf-name">Name</label>
+          <input id="cf-name" name="name" type="text" placeholder="Your name" required />
+        </div>
+        <div class="field">
+          <label for="cf-org">Organization</label>
+          <input id="cf-org" name="org" type="text" placeholder="Your organization" />
+        </div>
+      </div>
+      <div class="field">
+        <label for="cf-email">Email</label>
+        <input id="cf-email" name="email" type="email" placeholder="you@organization.ca" required />
+      </div>
+      <div class="field">
+        <label for="cf-type">How can we help?</label>
+        <select id="cf-type" name="type">
+          <option>Peer support program design</option>
+          <option>Indigenous-led digital health</option>
+          <option>Community engagement strategy</option>
+          <option>Behavioural health platform</option>
+          <option>Digital service transformation</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="cf-msg">Message</label>
+        <textarea id="cf-msg" name="message" placeholder="A few lines about your community and what you're hoping to build."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send message
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <p class="form-note">This opens your email app with the details ready to send.</p>
+    </form>
+  </div>
+</aside>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo-line">
+          <img src="images/logo-white.png" alt="Chemong Consulting" class="foot-logo" />
+        </div>
+        <p>An Ontario-based consulting firm designing trusted human-connection systems for organizations serving vulnerable, marginalized, and hard-to-reach populations.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#approach">Approach</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#peer">Peer Support</a></li>
+          <li><a href="#communities">Communities</a></li>
+          <li><a href="#philosophy">Philosophy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <button class="foot-btn" data-open-form>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 5h16v12H7l-3 3V5z" stroke-linejoin="round"/><path d="M8 10h8M8 13h5" stroke-linecap="round"/></svg>
+          Start a conversation
+        </button>
+        <ul>
+          <li><span>Ontario, Canada</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Chemong Consulting Company. All rights reserved.</span>
+      <span>Human-Centred · Digitally Enabled · Community Driven</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Header scroll state
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // Mobile menu
+  const toggle = document.getElementById('menuToggle');
+  const menu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', false);
+  }));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+  }, {threshold:0.14, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Slide-out contact drawer
+  const drawer = document.getElementById('formDrawer');
+  const backdrop = document.getElementById('formBackdrop');
+  const drawerClose = document.getElementById('drawerClose');
+  let lastFocus = null;
+
+  function openDrawer(){
+    lastFocus = document.activeElement;
+    menu.classList.remove('open');           // close mobile menu if open
+    toggle.setAttribute('aria-expanded', false);
+    backdrop.hidden = false;
+    requestAnimationFrame(() => { backdrop.classList.add('open'); drawer.classList.add('open'); });
+    drawer.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('drawer-open');
+    setTimeout(() => document.getElementById('cf-name').focus(), 350);
+  }
+  function closeDrawer(){
+    backdrop.classList.remove('open');
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('drawer-open');
+    setTimeout(() => { backdrop.hidden = true; }, 400);
+    if (lastFocus) lastFocus.focus();
+  }
+  document.querySelectorAll('[data-open-form]').forEach(el =>
+    el.addEventListener('click', (e) => { e.preventDefault(); openDrawer(); }));
+  drawerClose.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer(); });
+
+  // Contact form → compose email (no backend required)
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const v = id => (document.getElementById(id).value || '').trim();
+    const name = v('cf-name'), org = v('cf-org'), email = v('cf-email'), type = v('cf-type'), msg = v('cf-msg');
+    const subject = `New enquiry: ${type}${org ? ' · ' + org : ''}`;
+    const body =
+      `Name: ${name}\n` +
+      `Organization: ${org || 'Not provided'}\n` +
+      `Email: ${email}\n` +
+      `Interested in: ${type}\n\n` +
+      `${msg || ''}`;
+    window.location.href = `mailto:info@chemongconsulting.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+# Non-deploy / internal files — see ai/CLIENT_PUSH_RULES.md
+ai/
+*.md
+*.docx
+IMG_0183.jpeg
+.env
+.env.*
+.lovable/
+.impeccable/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
