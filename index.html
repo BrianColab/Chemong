@@ -397,6 +397,14 @@
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   #contactForm .btn-primary{width:100%;justify-content:center;margin-top:6px;}
   .form-note{font-size:.78rem;color:rgba(255,255,255,.5);margin-top:14px;text-align:center;}
+  .form-error{font-size:.86rem;color:#ffb1a8;margin-top:14px;text-align:center;line-height:1.5;}
+  #contactForm .btn-primary[disabled]{opacity:.65;cursor:default;transform:none;}
+  .form-success{text-align:center;padding:30px 0 10px;animation:fadeUp .5s var(--ease) both;}
+  .form-success .fs-icon{width:58px;height:58px;border-radius:50%;background:linear-gradient(150deg,var(--teal),var(--deep));color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 12px 30px -10px rgba(15,133,147,.7);}
+  .form-success .fs-icon svg{width:30px;height:30px;}
+  .form-success h3{color:#fff;font-size:1.45rem;margin-bottom:10px;}
+  .form-success p{color:rgba(255,255,255,.72);font-size:1rem;line-height:1.55;}
+  @keyframes fadeUp{0%{opacity:0;transform:translateY(12px);}100%{opacity:1;transform:none;}}
   body.drawer-open{overflow:hidden;}
 
   /* ---------- FOOTER ---------- */
@@ -825,11 +833,19 @@
         <label for="cf-msg">Message</label>
         <textarea id="cf-msg" name="message" placeholder="A few lines about your community and what you're hoping to build."></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Send message
+      <!-- honeypot spam trap (bots fill this; humans never see it) -->
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;" aria-hidden="true" />
+      <button type="submit" class="btn btn-primary" id="cf-submit">Send message
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
-      <p class="form-note">This opens your email app with the details ready to send.</p>
+      <p class="form-note">We'll reply to the email address you provide, usually within two business days.</p>
+      <p class="form-error" id="formError" role="alert" hidden></p>
     </form>
+    <div class="form-success" id="formSuccess" hidden>
+      <div class="fs-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Message sent</h3>
+      <p>Thanks for reaching out. We'll get back to you within two business days.</p>
+    </div>
   </div>
 </aside>
 
@@ -905,6 +921,7 @@
 
   function openDrawer(){
     lastFocus = document.activeElement;
+    resetContactForm();                       // fresh form each time it opens
     menu.classList.remove('open');           // close mobile menu if open
     toggle.setAttribute('aria-expanded', false);
     backdrop.hidden = false;
@@ -927,20 +944,64 @@
   backdrop.addEventListener('click', closeDrawer);
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer(); });
 
-  // Contact form → compose email (no backend required)
+  // Contact form → sends the email to john@chemong.ca via Web3Forms (no backend).
+  // Get a free access key at https://web3forms.com (enter john@chemong.ca) and paste it below.
+  const WEB3FORMS_KEY = "REPLACE_WITH_YOUR_WEB3FORMS_ACCESS_KEY";
+
   const form = document.getElementById('contactForm');
-  form.addEventListener('submit', (e) => {
+  const cfSubmit = document.getElementById('cf-submit');
+  const formError = document.getElementById('formError');
+  const formSuccess = document.getElementById('formSuccess');
+  const SEND_BTN_HTML = cfSubmit.innerHTML;
+
+  function resetContactForm(){
+    form.hidden = false;
+    formSuccess.hidden = true;
+    formError.hidden = true;
+    cfSubmit.disabled = false;
+    cfSubmit.innerHTML = SEND_BTN_HTML;
+  }
+
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    formError.hidden = true;
     const v = id => (document.getElementById(id).value || '').trim();
     const name = v('cf-name'), org = v('cf-org'), email = v('cf-email'), type = v('cf-type'), msg = v('cf-msg');
-    const subject = `New enquiry: ${type}${org ? ' · ' + org : ''}`;
-    const body =
-      `Name: ${name}\n` +
-      `Organization: ${org || 'Not provided'}\n` +
-      `Email: ${email}\n` +
-      `Interested in: ${type}\n\n` +
-      `${msg || ''}`;
-    window.location.href = `mailto:john@chemong.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    cfSubmit.disabled = true;
+    cfSubmit.textContent = 'Sending…';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New enquiry: ${type}${org ? ' · ' + org : ''}`,
+          from_name: 'Chemong Consulting website',
+          replyto: email,
+          botcheck: form.botcheck.checked,
+          Name: name,
+          Organization: org || 'Not provided',
+          Email: email,
+          'Interested in': type,
+          Message: msg || '(no message)',
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        form.reset();
+        form.hidden = true;
+        formSuccess.hidden = false;
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (err) {
+      formError.textContent = 'Sorry, something went wrong sending your message. Please try again, or call us at 613.818.5116.';
+      formError.hidden = false;
+      cfSubmit.disabled = false;
+      cfSubmit.innerHTML = SEND_BTN_HTML;
+    }
   });
 
   // Year
