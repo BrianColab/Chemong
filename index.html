@@ -195,6 +195,9 @@
   .media img{width:100%;height:100%;object-fit:cover;aspect-ratio:5/4;transition:transform .9s var(--ease);}
   .media:hover img{transform:scale(1.05);}
   .media .frame-tint{position:absolute;inset:0;background:linear-gradient(160deg,rgba(15,133,147,.08),rgba(6,43,52,.28));mix-blend-mode:multiply;}
+  /* flat artwork rather than a photo: the unifying tint and hover zoom don't apply */
+  .media.graphic .frame-tint{display:none;}
+  .media.graphic:hover img{transform:none;}
   .split .copy h2{font-size:clamp(1.8rem,3.6vw,2.7rem);margin-bottom:22px;}
   .split .copy p{color:var(--muted);font-size:1.06rem;margin-bottom:18px;}
   .split .copy p:last-child{margin-bottom:0;}
@@ -853,8 +856,8 @@
 <!-- ============ COMMUNITIES ============ -->
 <section class="section wash" id="communities">
   <div class="wrap split">
-    <div class="media reveal">
-      <img src="images/community.jpg" alt="A diverse group of people together outdoors, smiling" />
+    <div class="media graphic reveal">
+      <img src="images/community.jpg" alt="A medicine wheel with red, yellow, white and black quadrants" />
       <div class="frame-tint"></div>
     </div>
     <div class="copy reveal d2">
