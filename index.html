@@ -336,6 +336,90 @@
   }
   .creed-text b{font-weight:600;color:var(--teal);}
 
+  /* ---------- NUTRITION ---------- */
+  .nutrition{
+    --leaf:#2f9e6a; --leaf-deep:#1b6b4a; --leaf-soft:#eaf6ef;
+    background:linear-gradient(180deg,var(--paper) 0%,#f4faf6 42%,#eaf5ee 100%);
+  }
+  .nutrition .eyebrow{color:var(--leaf-deep);}
+  .nutri-head{display:grid;grid-template-columns:1.02fr 1fr;gap:clamp(28px,4.5vw,68px);align-items:end;}
+  .nutri-head h2{font-size:clamp(1.9rem,4vw,3rem);margin-bottom:18px;}
+  .nutri-head p{color:var(--muted);font-size:1.06rem;margin-bottom:16px;}
+  .nutri-head p:last-child{margin-bottom:0;}
+  .nutri-head .lead-hi{color:var(--leaf-deep);}
+
+  .nutri-steps{list-style:none;margin:clamp(32px,4vw,50px) 0 0;padding:0;}
+  .nutri-step{
+    display:grid;grid-template-columns:180px minmax(0,1fr);gap:clamp(18px,3vw,52px);
+    padding:clamp(26px,3vw,38px) 0;border-top:1px solid var(--line);
+  }
+  .nutri-step:last-child{border-bottom:1px solid var(--line);}
+  .nutri-mark{position:relative;}
+  .nutri-badge{
+    width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:700;font-size:1.45rem;color:#fff;
+    background:linear-gradient(150deg,var(--leaf),var(--leaf-deep));
+    box-shadow:0 16px 30px -16px rgba(27,107,74,.85);margin-bottom:14px;
+  }
+  .nutri-kicker{display:block;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--leaf-deep);}
+  .nutri-step:not(:last-child) .nutri-mark::after{
+    content:"";position:absolute;left:27px;top:74px;bottom:0;width:2px;
+    background:linear-gradient(180deg,color-mix(in srgb,var(--leaf) 45%,transparent),transparent);
+  }
+  .nutri-step h3{font-size:clamp(1.24rem,2.2vw,1.68rem);margin-bottom:16px;}
+  .nutri-step p{color:var(--muted);font-size:1.02rem;margin-bottom:14px;}
+  .nutri-step p:last-child{margin-bottom:0;}
+
+  .nutri-stat{
+    display:flex;align-items:center;gap:20px;margin:0 0 18px;padding:18px 24px;
+    background:var(--paper);border:1px solid color-mix(in srgb,var(--leaf) 26%,transparent);
+    border-radius:var(--r-md);box-shadow:var(--shadow-sm);
+  }
+  .nutri-stat b{font-family:'Fraunces',serif;font-size:2.4rem;line-height:1;color:var(--leaf-deep);flex:0 0 auto;}
+  .nutri-stat span{font-size:.92rem;color:var(--muted);line-height:1.5;}
+
+  .nutri-flow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:20px;}
+  .nutri-flow > span{display:inline-flex;align-items:center;gap:10px;}
+  .nutri-flow em{
+    font-style:normal;padding:10px 18px;border-radius:var(--r-full);
+    background:var(--leaf-soft);border:1px solid color-mix(in srgb,var(--leaf) 24%,transparent);
+    font-size:.88rem;font-weight:600;color:var(--leaf-deep);
+  }
+  .nutri-flow svg{width:18px;height:18px;flex:0 0 auto;color:color-mix(in srgb,var(--leaf) 65%,transparent);}
+
+  .nutri-serves-head{margin:clamp(38px,4.5vw,58px) 0 0;}
+  .nutri-serves-head h3{font-size:clamp(1.4rem,2.6vw,2rem);margin-bottom:12px;}
+  .nutri-serves-head p{color:var(--muted);font-size:1.04rem;}
+  .nutri-serves{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:24px 0 0;padding:0;}
+  .nutri-serves li{
+    display:flex;align-items:flex-start;gap:13px;padding:17px 19px;
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);
+    font-size:.95rem;line-height:1.5;color:var(--text);
+    transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);
+  }
+  .nutri-serves li:hover{
+    transform:translateY(-5px);box-shadow:0 24px 48px -30px rgba(27,107,74,.9);
+    border-color:color-mix(in srgb,var(--leaf) 34%,transparent);
+  }
+  .nutri-serves svg{width:21px;height:21px;flex:0 0 auto;color:var(--leaf);margin-top:2px;}
+  .nutri-serves-note{margin-top:22px;color:var(--muted);font-size:1.04rem;max-width:70ch;}
+
+  .nutri-close{
+    position:relative;overflow:hidden;margin-top:clamp(36px,4.5vw,58px);
+    padding:clamp(30px,4vw,54px);border-radius:var(--r-xl);color:#fff;
+    background:linear-gradient(150deg,var(--ink) 0%,#0a4a4c 52%,#125e4b 100%);
+    box-shadow:var(--shadow);
+  }
+  .nutri-close::after{
+    content:"";position:absolute;right:-90px;top:-110px;width:360px;height:360px;border-radius:50%;
+    background:radial-gradient(circle,#2f9e6a,transparent 68%);opacity:.4;filter:blur(55px);pointer-events:none;
+  }
+  .nutri-close > *{position:relative;z-index:2;}
+  .nutri-close h3{color:#fff;font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:18px;max-width:22ch;}
+  .nutri-close p{color:rgba(255,255,255,.82);font-size:1.06rem;max-width:72ch;margin-bottom:14px;}
+  .nutri-close p:last-child{margin-bottom:0;}
+  .nutri-close b{color:#fff;font-weight:600;}
+
   /* ---------- CLOSING CTA ---------- */
   .cta{
     background:
@@ -441,6 +525,8 @@
     .value-strip{grid-template-columns:1fr 1fr;}
     .value-item:nth-child(odd){border-left:0;}
     .value-item:nth-child(n+3){border-top:1px solid var(--line);}
+    .nutri-serves{grid-template-columns:repeat(2,1fr);}
+    .nutri-step{grid-template-columns:140px minmax(0,1fr);}
   }
   @media (max-width:760px){
     .nav-links,.nav-cta .btn{display:none;}
@@ -465,6 +551,12 @@
     .value-strip{grid-template-columns:1fr;}
     .value-item{border-left:0;border-top:1px solid var(--line);}
     .value-item:first-child{border-top:0;}
+    .nutri-head{grid-template-columns:1fr;align-items:start;gap:20px;}
+    .nutri-step{grid-template-columns:1fr;gap:16px;}
+    .nutri-mark{display:flex;align-items:center;gap:16px;}
+    .nutri-badge{margin-bottom:0;}
+    .nutri-step:not(:last-child) .nutri-mark::after{display:none;}
+    .nutri-serves{grid-template-columns:1fr;}
   }
   @media (max-width:480px){
     .cards{grid-template-columns:1fr;}
@@ -493,6 +585,7 @@
       <a href="#expertise">Expertise</a>
       <a href="#peer">Peer Support</a>
       <a href="#communities">Communities</a>
+      <a href="#nutrition">Nutrition</a>
       <a href="#philosophy">Philosophy</a>
     </nav>
     <div class="nav-cta">
@@ -509,6 +602,7 @@
   <a href="#expertise">Expertise</a>
   <a href="#peer">Peer Support</a>
   <a href="#communities">Communities</a>
+  <a href="#nutrition">Nutrition</a>
   <a href="#philosophy">Philosophy</a>
   <a class="btn btn-primary" href="#contact">Start a conversation</a>
 </nav>
@@ -744,6 +838,117 @@
   </div>
 </section>
 
+<!-- ============ NUTRITION ============ -->
+<section class="section nutrition" id="nutrition">
+  <div class="wrap">
+    <div class="nutri-head reveal">
+      <div>
+        <p class="eyebrow">Chemong Nutrition</p>
+        <h2>A practical path toward nutrition sovereignty.</h2>
+        <p>For many rural, remote and fly-in communities, access to nutritious food is constrained by distance, cost, weather and an unreliable supply chain.</p>
+        <p>Fresh produce is expensive to transport, difficult to store and often arrives with a limited remaining shelf life. These conditions can leave families with fewer choices and increase their reliance on packaged and ultra-processed foods.</p>
+      </div>
+      <div>
+        <p>Chemong Nutrition works with communities to develop practical, affordable and culturally appropriate nutrition strategies. Our approach is <span class="lead-hi">not intended to replace</span> traditional foods, harvesting practices or community knowledge.</p>
+        <p>It is designed to complement them—helping communities add accessible sources of plant-based nutrients today while building greater local control over food production for the future.</p>
+        <p>Our three-step Nutrition Sovereignty model can be adapted to the priorities, infrastructure and capacity of each community.</p>
+      </div>
+    </div>
+
+    <ol class="nutri-steps">
+      <li class="nutri-step reveal">
+        <div class="nutri-mark">
+          <span class="nutri-badge" aria-hidden="true">1</span>
+          <span class="nutri-kicker">Step One</span>
+        </div>
+        <div>
+          <h3>Introduce nutrient-dense everyday options</h3>
+          <div class="nutri-stat">
+            <b>≈5×</b>
+            <span>Research led by the United States Department of Agriculture found that, on average, the microgreens studied contained approximately five times the vitamin and carotenoid concentrations of mature plants.</span>
+          </div>
+          <p>Microgreens are young vegetable plants that can contain substantially higher concentrations of certain vitamins and carotenoids than their mature counterparts, although nutritional content varies by species and growing conditions.</p>
+          <p>Chemong Nutrition makes these ingredients easier to transport, store and use by incorporating carefully selected microgreens into shelf-stable formats such as freeze-dried powders, gummies, soup bases and bouillon cubes.</p>
+          <p>These products are designed for simple, familiar use. A microgreen powder or fortified soup base can be added to stews, soups, sauces and other established recipes without asking families to abandon the foods, flavours or traditions they value. The objective is to make improved nutrition practical—not complicated.</p>
+        </div>
+      </li>
+      <li class="nutri-step reveal">
+        <div class="nutri-mark">
+          <span class="nutri-badge" aria-hidden="true">2</span>
+          <span class="nutri-kicker">Step Two</span>
+        </div>
+        <div>
+          <h3>Build a reliable community nutrition supply</h3>
+          <p>The second step establishes a more consistent and economical supply of nutrient-dense ingredients. Chemong combines lightweight, shelf-stable microgreen products and other carefully selected micronutrient ingredients with fresh options that can be transported efficiently and stored with less waste.</p>
+          <p>Reducing weight, spoilage and refrigeration requirements can lower transportation costs and make supply more dependable. Each community can select the formats, ingredients and distribution methods that best reflect its needs, traditional foods, existing health programs and local preferences.</p>
+          <p>This stage can support community kitchens, schools, maternal-health programs, Elder services, diabetes-prevention initiatives and other locally directed nutrition priorities.</p>
+        </div>
+      </li>
+      <li class="nutri-step reveal">
+        <div class="nutri-mark">
+          <span class="nutri-badge" aria-hidden="true">3</span>
+          <span class="nutri-kicker">Step Three</span>
+        </div>
+        <div>
+          <h3>Establish community-controlled production</h3>
+          <p>The long-term goal is not continued dependence on products transported from the south. It is to help communities develop the capacity to grow and produce more of what they need locally.</p>
+          <p>Chemong Nutrition works with community leadership to plan and establish locally controlled growing systems. Depending on the community, these may include greenhouses, modular indoor farms, hydroponic or soil-based systems, specialized growing media, efficient lighting, temperature controls and year-round microgreen production.</p>
+          <p>We also provide training, education, operating procedures and ongoing support so local employees can manage production, develop new skills and gradually assume control of the system.</p>
+          <div class="nutri-flow" aria-label="The progression: immediate nutritional support, to a more reliable supply, to community-owned production and employment.">
+            <em>Immediate nutritional support</em>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <em>A more reliable supply</em>
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <em>Community-owned production and employment</em>
+            </span>
+          </div>
+        </div>
+      </li>
+    </ol>
+
+    <div class="nutri-serves-head reveal">
+      <h3>Designed around community priorities</h3>
+      <p>Chemong Nutrition can support community-led programs serving:</p>
+      <ul class="nutri-serves">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20c4.5-3 7-6 7-9.2A4 4 0 0012 8.6 4 4 0 005 10.8C5 14 7.5 17 12 20z" stroke-linejoin="round"/></svg>
+          Mothers, expectant mothers and maternal-health programs
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8" cy="6.8" r="2.6"/><path d="M3.6 20a4.4 4.4 0 018.8 0" stroke-linecap="round"/><circle cx="16.6" cy="11" r="2"/><path d="M13.2 20a3.4 3.4 0 016.8 0" stroke-linecap="round"/></svg>
+          Infants, children and youth
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10" cy="5" r="2.5"/><path d="M10 7.8c-2 0-3.2 1.3-3.5 3L6 15h1.9l.5 6M12.1 15l.5 6" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 10v11" stroke-linecap="round"/></svg>
+          Elders
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12.5h4l2-4.5 2.6 8 2.2-5.5 1.6 2h5.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          People living with diabetes or elevated metabolic risk
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3.5 11h17a8.5 8.5 0 01-17 0z" stroke-linejoin="round"/><path d="M9 7.5c0-1.5 1.5-1.8 1.5-3M13 7.5c0-1.5 1.5-1.8 1.5-3M4 21h16" stroke-linecap="round"/></svg>
+          Individuals and families experiencing food insecurity
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4.5" y="4.5" width="15" height="16" rx="2.5"/><path d="M9.2 4.5V3.4c0-.6.5-1.1 1.1-1.1h3.4c.6 0 1.1.5 1.1 1.1v1.1z" stroke-linejoin="round"/><path d="M8.6 12.6l2.4 2.4 4.4-4.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          People identified by qualified health professionals as being at risk of nutrient deficiency
+        </li>
+      </ul>
+      <p class="nutri-serves-note">Every program begins with the community. Local leadership, health professionals, Elders and families help determine what is appropriate, how products will be used and what long-term food independence should look like.</p>
+    </div>
+
+    <div class="nutri-close reveal">
+      <h3>Nutrition sovereignty is more than food delivery.</h3>
+      <p>Nutrition sovereignty means having meaningful control over how nutritious food is selected, produced, distributed and incorporated into community life.</p>
+      <p>Chemong Nutrition provides an achievable path forward: <b>improve access now, strengthen the supply system next and build community-controlled production for the future.</b></p>
+    </div>
+  </div>
+</section>
+
 <!-- ============ PHILOSOPHY ============ -->
 <section class="section" id="philosophy">
   <div class="wrap creed-grid">
@@ -866,6 +1071,7 @@
           <li><a href="#expertise">Expertise</a></li>
           <li><a href="#peer">Peer Support</a></li>
           <li><a href="#communities">Communities</a></li>
+          <li><a href="#nutrition">Nutrition</a></li>
           <li><a href="#philosophy">Philosophy</a></li>
         </ul>
       </div>
