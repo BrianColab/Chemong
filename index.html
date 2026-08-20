@@ -129,11 +129,11 @@
 
   /* ---------- HERO ---------- */
   .hero{
-    min-height:max(100svh,66.6667vw);display:flex;align-items:center;
+    min-height:100svh;display:flex;align-items:center;
     background:
-      linear-gradient(180deg,rgba(6,43,52,.55) 0%,rgba(8,72,87,.4) 55%,rgba(6,43,52,.28) 100%),
+      linear-gradient(180deg,rgba(6,43,52,.55) 0%,rgba(8,72,87,.72) 55%,rgba(6,43,52,.92) 100%),
       radial-gradient(120% 90% at 80% 10%,rgba(78,177,192,.35),transparent 60%),
-      url('IMG_5179.png');
+      url('images/hero.jpg');
     background-size:cover;background-position:center;
     color:#fff;overflow:hidden;
     padding:70px 0 45px;
@@ -161,7 +161,7 @@
     .hero-tag span{padding:0;margin-right:20px;}
     .hero-tag span:not(:first-child)::before{display:none;}
   }
-  .hero-lead{font-size:clamp(1.05rem,1.6vw,1.22rem);color:rgba(255,255,255,.86);max-width:620px;margin:0 0 8px;line-height:1.6;}
+  .hero-lead{font-size:clamp(1.05rem,1.6vw,1.22rem);color:rgba(255,255,255,.86);max-width:620px;margin:0 0 38px;line-height:1.6;}
   .hero-actions{display:flex;flex-wrap:wrap;gap:16px;}
   /* ---------- TRUST STRIP ---------- */
   .trust{position:relative;background:linear-gradient(180deg,#000 0%,#05171d 100%);
@@ -198,6 +198,7 @@
   /* flat artwork rather than a photo: the unifying tint and hover zoom don't apply */
   .media.graphic .frame-tint{display:none;}
   .media.graphic:hover img{transform:none;}
+  .media.hero-art img{aspect-ratio:3/2;}
   .split .copy h2{font-size:clamp(1.8rem,3.6vw,2.7rem);margin-bottom:22px;}
   .split .copy p{color:var(--muted);font-size:1.06rem;margin-bottom:18px;}
   .split .copy p:last-child{margin-bottom:0;}
@@ -549,9 +550,6 @@
   .reveal.d4{transition-delay:.32s;} .reveal.d5{transition-delay:.4s;} .reveal.d6{transition-delay:.48s;}
 
   /* ---------- MOBILE ---------- */
-  @media (min-width:761px){
-    .hero-inner{transform:translateY(-30px);}
-  }
   @media (max-width:920px){
     .cards{grid-template-columns:repeat(2,1fr);}
     .foot-grid{grid-template-columns:1fr 1fr;}
@@ -694,8 +692,8 @@
 <!-- ============ APPROACH / INTRO ============ -->
 <section class="section" id="approach">
   <div class="wrap split">
-    <div class="media reveal">
-      <img src="images/connection.jpg" alt="A small group of people in warm conversation around a table" />
+    <div class="media graphic hero-art reveal">
+      <img src="IMG_5179.png" alt="A canoe on a lake at sunset with Chemong Consulting values" />
       <div class="frame-tint"></div>
     </div>
     <div class="copy reveal d2">
