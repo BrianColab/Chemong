@@ -129,12 +129,12 @@
 
   /* ---------- HERO ---------- */
   .hero{
-    min-height:100svh;display:flex;align-items:center;
+    min-height:max(100svh,66.6667vw);display:flex;align-items:center;
     background:
       linear-gradient(180deg,rgba(6,43,52,.55) 0%,rgba(8,72,87,.4) 55%,rgba(6,43,52,.28) 100%),
       radial-gradient(120% 90% at 80% 10%,rgba(78,177,192,.35),transparent 60%),
       url('IMG_5179.png');
-    background-size:auto 125%;background-position:center top;
+    background-size:cover;background-position:center;
     color:#fff;overflow:hidden;
     padding:70px 0 45px;
   }
@@ -161,7 +161,7 @@
     .hero-tag span{padding:0;margin-right:20px;}
     .hero-tag span:not(:first-child)::before{display:none;}
   }
-  .hero-lead{font-size:clamp(1.05rem,1.6vw,1.22rem);color:rgba(255,255,255,.86);max-width:620px;margin:0 0 38px;line-height:1.6;}
+  .hero-lead{font-size:clamp(1.05rem,1.6vw,1.22rem);color:rgba(255,255,255,.86);max-width:620px;margin:0 0 8px;line-height:1.6;}
   .hero-actions{display:flex;flex-wrap:wrap;gap:16px;}
   /* ---------- TRUST STRIP ---------- */
   .trust{position:relative;background:linear-gradient(180deg,#000 0%,#05171d 100%);
@@ -549,6 +549,9 @@
   .reveal.d4{transition-delay:.32s;} .reveal.d5{transition-delay:.4s;} .reveal.d6{transition-delay:.48s;}
 
   /* ---------- MOBILE ---------- */
+  @media (min-width:761px){
+    .hero-inner{transform:translateY(-30px);}
+  }
   @media (max-width:920px){
     .cards{grid-template-columns:repeat(2,1fr);}
     .foot-grid{grid-template-columns:1fr 1fr;}
